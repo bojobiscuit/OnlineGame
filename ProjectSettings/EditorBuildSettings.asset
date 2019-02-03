@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/AutoJoin.unity
+    guid: 6a5dad1d997ff554b89779ce65cd6f6d
+  - enabled: 1
+    path: Assets/Scenes/TestOnline.unity
+    guid: fa40785d923bef247bd979aab482d1ec
+  - enabled: 1
+    path: Assets/Scenes/TestOffline.unity
+    guid: 1ea9168cb024e6d42ac920514485bfcb
   m_configObjects: {}

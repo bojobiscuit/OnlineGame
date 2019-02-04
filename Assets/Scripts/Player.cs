@@ -14,6 +14,9 @@ public class Player : Moveable
         {
             var meshRenderer = body.GetComponent<MeshRenderer>();
             meshRenderer.material.color = Color.cyan;
+
+            var camera = FindObjectOfType<TvCamera>();
+            camera.target = transform;
         }
         else
         {

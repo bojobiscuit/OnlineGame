@@ -24,6 +24,13 @@ public class Moveable : TNBehaviour
             MovePositionRemote();
     }
 
+    public void SetVelocity(Vector3 velo)
+    {
+        _velocity = velo;
+        netPosition = transform.position;
+        tno.Send("OnVelo", Target.All, _velocity, netPosition);
+    }
+
     protected virtual void UpdateInput()
     {
         // Let Child Classes Handle Input
@@ -32,11 +39,14 @@ public class Moveable : TNBehaviour
     private void MovePositionRemote()
     {
         _velocity += GetVelocity(netInput);
+        _previousPosition = transform.position;
         transform.position += _velocity;
         transform.position = Vector3.Lerp(transform.position, netPosition, Time.deltaTime);
 
         if (Vector3.Distance(transform.position, netPosition) > 2)
             transform.position = Vector3.Lerp(transform.position, netPosition, 0.5f);
+
+        StayInBounds();
     }
 
     private void MovePosition()
@@ -69,6 +79,15 @@ public class Moveable : TNBehaviour
             transform.position = hit.point + (hit.normal * (radius + 0.01f));
         }
     }
+
+    [RFC]
+    void OnVelo(Vector3 velo, Vector3 pos)
+    {
+        _velocity = velo;
+        netPosition = pos;
+        transform.position = pos;
+    }
+
 
     protected Vector3 _input = Vector3.zero;
     protected Vector3 _velocity = Vector3.zero;

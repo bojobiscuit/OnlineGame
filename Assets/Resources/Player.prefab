@@ -84,6 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   friction: 5
+  radius: 0.5
   netPosition: {x: 0, y: 0, z: 0}
   netInput: {x: 0, y: 0, z: 0}
   indicator: {fileID: 2131165908178834526}
@@ -99,7 +100,6 @@ GameObject:
   - component: {fileID: 7579564715977815316}
   - component: {fileID: 7603333242078904518}
   - component: {fileID: 4791504312473813767}
-  - component: {fileID: 7941304937417428404}
   m_Layer: 0
   m_Name: Indicator
   m_TagString: Untagged
@@ -166,20 +166,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7941304937417428404
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131165908178834526}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7240060413467299918
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +177,6 @@ GameObject:
   - component: {fileID: 321547779425101076}
   - component: {fileID: 6396548190069912966}
   - component: {fileID: 8644701133350609999}
-  - component: {fileID: 7072670384143044922}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -258,16 +243,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7072670384143044922
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7240060413467299918}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

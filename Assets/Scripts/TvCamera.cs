@@ -9,6 +9,7 @@ public class TvCamera : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * speed);
+        Vector3 pos = !target ? Vector3.zero : target.position;
+        transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime * speed);
     }
 }

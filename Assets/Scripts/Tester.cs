@@ -9,7 +9,7 @@ public class Tester : MonoBehaviour
     public Moveable ball;
     public float speed;
     public GameObject ballPrefab;
-
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -37,6 +37,17 @@ public class Tester : MonoBehaviour
                 return;
 
             CreateBall();
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (!player)
+                return;
+
+            if (TNManager.isConnected && !TNManager.IsInChannel(TNManager.lastChannelID))
+                return;
+
+            player.RandomizeColor();
         }
     }
 

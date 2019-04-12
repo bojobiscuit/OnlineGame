@@ -5,13 +5,15 @@ using TNet;
 
 public class Player : Moveable
 {
-    public GameObject indicator;
-    public GameObject body;
+    protected override void Awake()
+    {
+        base.Awake();
+        _rotater = GetComponent<Rotater>();
+        _meshManager = GetComponent<PersonMeshManager>();
+    }
 
     private void Start()
     {
-        bodyMesh = body.GetComponent<MeshRenderer>();
-
         if (tno.isMine)
         {
             var camera = FindObjectOfType<TvCamera>();
@@ -19,10 +21,12 @@ public class Player : Moveable
 
             var tester = FindObjectOfType<Tester>();
             tester.player = this;
+
+            _meshManager.SetHighlightColor(Color.red);
         }
         else
         {
-            indicator.SetActive(false);
+            _meshManager.HideHighlight();
         }
     }
 
@@ -31,10 +35,15 @@ public class Player : Moveable
         _input = Vector3.zero;
         _input.x = Input.GetAxis(inHorizontal);
         _input.z = Input.GetAxis(inVertical);
-        _input = _input.normalized;
+
+        if(_input.sqrMagnitude > 0)
+        {
+            _input = _input.normalized;
+            _rotater.UpdateRotationByDirection(_input);
+        }
     }
 
-    public void RandomizeColor()
+    public void ChangeJerseyColorRandom()
     {
         if (tno.isMine)
         {
@@ -46,10 +55,12 @@ public class Player : Moveable
     [RFC]
     protected void OnColorChange(Color color)
     {
-        bodyMesh.material.color = color;
+        _meshManager.ChangeJerseyColor(color);
     }
 
-    private MeshRenderer bodyMesh;
+    private Rotater _rotater;
+    private PersonMeshManager _meshManager;
+
     private static readonly string inHorizontal = "Horizontal";
     private static readonly string inVertical = "Vertical";
 }

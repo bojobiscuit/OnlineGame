@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/AutoServer.unity
+    guid: 7e6697b508c6c29429f039349f3c66db
   - enabled: 1
     path: Assets/Scenes/AutoJoin.unity
     guid: 6a5dad1d997ff554b89779ce65cd6f6d

@@ -14,15 +14,7 @@ public class Tester : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!ball)
-            {
-                var moves = FindObjectsOfType<Moveable>();
-                foreach(var move in moves)
-                {
-                    if (move.name == "Ball")
-                        ball = move;
-                }
-            }
+            FindBall();
 
             if (ball)
                 ball.SetVelocity(Vector3.forward * speed);
@@ -30,6 +22,8 @@ public class Tester : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
+            FindBall();
+
             if (ball)
                 return;
 
@@ -47,15 +41,27 @@ public class Tester : MonoBehaviour
             if (TNManager.isConnected && !TNManager.IsInChannel(TNManager.lastChannelID))
                 return;
 
-            player.RandomizeColor();
+            player.ChangeJerseyColorRandom();
         }
     }
 
+    private void FindBall()
+    {
+        if (!ball)
+        {
+            var moves = FindObjectsOfType<Moveable>();
+            foreach (var move in moves)
+            {
+                if (move.name == "Ball")
+                    ball = move;
+            }
+        }
+    }
 
     void CreateBall()
     {
         Debug.Log(TNManager.lastChannelID);
-        TNManager.Instantiate(TNManager.lastChannelID, "CreateBall", "Ball", false, Vector3.zero);
+        TNManager.Instantiate(TNManager.lastChannelID, "CreateBall", "Ball", true, Vector3.zero);
     }
 
     [RCC]

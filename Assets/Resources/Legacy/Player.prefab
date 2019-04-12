@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04aa91ef36261b4b97cbf238bff3553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  friction: 5
+  speed: 0.5
+  friction: 2.5
   radius: 0.5
   netPosition: {x: 0, y: 0, z: 0}
   netInput: {x: 0, y: 0, z: 0}

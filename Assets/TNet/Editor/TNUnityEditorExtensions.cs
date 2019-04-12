@@ -110,7 +110,7 @@ namespace TNet
 		static public void BeginContents ()
 		{
 			GUILayout.BeginHorizontal();
-			EditorGUILayout.BeginHorizontal("AS TextArea", GUILayout.MinHeight(10f));
+			EditorGUILayout.BeginHorizontal("TextArea", GUILayout.MinHeight(10f));
 			GUILayout.BeginVertical();
 			GUILayout.Space(2f);
 		}

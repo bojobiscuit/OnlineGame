@@ -76,8 +76,13 @@ public class Moveable : TNBehaviour
         if (Physics.SphereCast(_previousPosition, radius, _velocity.normalized, out RaycastHit hit, _velocity.magnitude))
         {
             _velocity = Vector3.Reflect(_velocity, hit.normal);
-            transform.position = hit.point + (hit.normal * (radius + 0.01f));
+            _velocity.y = 0;
+
+            Vector3 translation = hit.point + (hit.normal * (radius + 0.01f));
+            translation.y = 0;
+            transform.position = translation;
         }
+
     }
 
     [RFC]

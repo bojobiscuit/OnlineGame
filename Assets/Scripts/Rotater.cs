@@ -26,5 +26,5 @@ public class Rotater : MonoBehaviour
     }
 
     private Quaternion _targetRotation;
-    private Vector3 _lastDirection = Vector3.back;
+    private Vector3 _lastDirection = Vector3.forward;
 }

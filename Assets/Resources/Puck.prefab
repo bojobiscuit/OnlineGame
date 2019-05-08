@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5615478211206118460
+--- !u!1 &1618621223171466514
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5615478211206275100}
-  - component: {fileID: 5615478211204948028}
-  - component: {fileID: 5615478211203851004}
+  - component: {fileID: 1618621223171569970}
+  - component: {fileID: 1618621223174469906}
+  - component: {fileID: 1618621223173471186}
   m_Layer: 0
-  m_Name: Puck
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5615478211206275100
+--- !u!4 &1618621223171569970
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5615478211206118460}
+  m_GameObject: {fileID: 1618621223171466514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4589121979244765135}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5615478211204948028
+--- !u!33 &1618621223174469906
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5615478211206118460}
+  m_GameObject: {fileID: 1618621223171466514}
   m_Mesh: {fileID: 4300000, guid: 2ca35a52a0a12914c9a3c7e3c35fde36, type: 3}
---- !u!23 &5615478211203851004
+--- !u!23 &1618621223173471186
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5615478211206118460}
+  m_GameObject: {fileID: 1618621223171466514}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -78,3 +78,89 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &6312193932893649627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4589121979244765135}
+  - component: {fileID: 4269703748764387781}
+  - component: {fileID: 8786469249554787095}
+  - component: {fileID: 5568255377915767379}
+  m_Layer: 0
+  m_Name: Puck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4589121979244765135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312193932893649627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1618621223171569970}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4269703748764387781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312193932893649627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b60cb76d8d8319469ddbb94bac31d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mStaticID: 0
+  ignoreWarnings: 0
+--- !u!114 &8786469249554787095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312193932893649627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389c95ca30ab20b4f9cb482cd1b25241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entries:
+  - target: {fileID: 5568255377915767379}
+    propertyName: netPosition
+  - target: {fileID: 5568255377915767379}
+    propertyName: netInput
+  updatesPerSecond: 10.39
+  isSavedOnServer: 0
+  isImportant: 0
+  onlyOwnerCanSync: 1
+--- !u!114 &5568255377915767379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312193932893649627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a49c9b3a5e694346923af93600615c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  friction: 1
+  radius: 0.5
+  netPosition: {x: 0, y: 0, z: 0}
+  netInput: {x: 0, y: 0, z: 0}

@@ -46,5 +46,5 @@ MonoBehaviour:
   player: {fileID: 0}
   ball: {fileID: 0}
   speed: 0.5
-  ballPrefab: {fileID: 3772275834130304911, guid: c2fb2843c46004d4bad27e4a6f00c4b4,
+  ballPrefab: {fileID: 6312193932893649627, guid: f8534accb44233041bf7381b333ce274,
     type: 3}

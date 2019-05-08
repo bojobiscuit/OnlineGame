@@ -14,7 +14,7 @@ public class Tester : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            FindBall();
+            FindPuck();
 
             if (ball)
                 ball.SetVelocity(Vector3.forward * speed);
@@ -22,7 +22,7 @@ public class Tester : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            FindBall();
+            FindPuck();
 
             if (ball)
                 return;
@@ -45,14 +45,14 @@ public class Tester : MonoBehaviour
         }
     }
 
-    private void FindBall()
+    private void FindPuck()
     {
         if (!ball)
         {
             var moves = FindObjectsOfType<Moveable>();
             foreach (var move in moves)
             {
-                if (move.name == "Ball")
+                if (move.name == "Puck")
                     ball = move;
             }
         }
@@ -61,11 +61,11 @@ public class Tester : MonoBehaviour
     void CreateBall()
     {
         Debug.Log(TNManager.lastChannelID);
-        TNManager.Instantiate(TNManager.lastChannelID, "CreateBall", "Ball", true, Vector3.zero);
+        TNManager.Instantiate(TNManager.lastChannelID, "CreatePuck", "Puck", true, Vector3.zero);
     }
 
     [RCC]
-    static GameObject CreateBall(GameObject prefab, Vector3 pos)
+    static GameObject CreatePuck(GameObject prefab, Vector3 pos)
     {
         GameObject go = prefab.Instantiate();
         go.transform.position = pos;
